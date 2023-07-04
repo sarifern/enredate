@@ -46,6 +46,9 @@ Ejemplo
 
 3. Selecciona una de las opciones, verás como enciende o apaga tu foquito. Felicidades!
 
+![image](https://github.com/sarifern/enredate/assets/9137865/79459122-93d9-4175-9c70-95f50f7bbfcf)
+
+
 ## Agradecimientos
 
 Este workshop se logró con las siguientes librerias:
