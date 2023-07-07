@@ -24,7 +24,7 @@ def off(name):
         print("ERROR Tasmota: ", ex)
 
 
-def connect(mqtt_broker, mqtt_port, mqtt_user, mqtt_password):
+def connect(mqtt_broker, mqtt_user, mqtt_password):
     try:
         client_id = "botmanager-tasmota-" + socket.gethostname()
         print(client_id)
@@ -32,7 +32,7 @@ def connect(mqtt_broker, mqtt_port, mqtt_user, mqtt_password):
         global client
         client = mqtt_client.Client(client_id)
         client.username_pw_set(mqtt_user, mqtt_password)
-        client.connect(mqtt_broker, mqtt_port)
+        client.connect(mqtt_broker, 1833)
 
     except Exception as ex:
         print("ERROR Tasmota: ", ex)
