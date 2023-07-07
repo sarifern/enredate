@@ -30,13 +30,8 @@ class offCommand(Command):
         :return: a string or Response object (or a list of either).
         Use Response if you want to return another card.
         """
-        connect(
-            mqtt_broker=os.getenv("MQTT_HOST"),
-            mqtt_user=os.getenv("MQTT_USER"),
-            mqtt_password=os.getenv("MQTT_PW"),
-            mqtt_port=1883,
-        )
+        # AQUI DEBERIAMOS CONECTARNOS AL SERVIDOR DE MENSAJES
 
     def execute(self, message, attachment_actions, activity):
-        off(self.switch_name)
-        return "Apagué tu foco ⚪"
+        # AQUI DEBERIAMOS PUBLICAR UN MENSAJE PARA APAGAR EL FOCO
+        # PODRIAMOS REGRESAR UN MENSAJE DE CONFIRMACION NO?
