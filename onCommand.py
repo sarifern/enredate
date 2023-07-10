@@ -26,6 +26,6 @@ class onCommand(Command):
         # AQUI DEBERIAMOS CONECTARNOS AL SERVIDOR DE MENSAJES
         # connect(os.getenv("MQTT_HOST"), os.getenv("MQTT_USER"), os.getenv("MQTT_PW"))
         # AQUI DEBERIAMOS PUBLICAR UN MENSAJE PARA PRENDER EL FOCO
-        on(self.switch_name)
+        on(self.switch_name, self.password)
         # PODRIAMOS REGRESAR UN MENSAJE DE CONFIRMACION NO?
         return "encendi tu foco"

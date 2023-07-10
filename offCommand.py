@@ -25,6 +25,6 @@ class offCommand(Command):
     def execute(self, message, attachment_actions, activity):
         # AQUI DEBERIAMOS CONECTARNOS AL SERVIDOR DE MENSAJES
         # AQUI DEBERIAMOS PUBLICAR UN MENSAJE PARA APAGAR EL FOCO
-        off(self.switch_name)
+        off(self.switch_name, self.password)
         # PODRIAMOS REGRESAR UN MENSAJE DE CONFIRMACION NO?
         return "apague el foco"
