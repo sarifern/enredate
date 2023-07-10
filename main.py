@@ -13,8 +13,8 @@ bot = WebexBot(
 )
 
 # Add new commands for the bot to listen out for.
-bot.add_command(onCommand(switch_name="5BA7B3"))
-bot.add_command(offCommand(switch_name="5BA7B3"))
+bot.add_command(onCommand(switch_name="5BA771", password=os.getenv("MQTT_PW")))
+bot.add_command(offCommand(switch_name="5BA771", password=os.getenv("MQTT_PW")))
 
 # Call `run` for the bot to wait for incoming messages.
 bot.run()

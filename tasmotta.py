@@ -1,38 +1,41 @@
-import socket
-from paho.mqtt import client as mqtt_client
+import paho.mqtt.client
+import paho.mqtt.publish
+
 
 client = "unknown"
 
 
-def on(name):
+def on(name, password):
     try:
         topic = "cmnd/tasmota_" + name + "/POWER"
         # print(topic)
         global client
-        client.publish(topic, "ON")
+        paho.mqtt.publish.single(
+            topic=topic,
+            payload="ON",
+            hostname="node02.myqtthub.com",
+            port=1883,
+            auth={"username": "stem_week_2023", "password": password},
+        )
+
+    #     client.publish(topic, "OFF")
     except Exception as ex:
         print("ERROR Tasmota: ", ex)
 
 
-def off(name):
+def off(name, password):
     try:
         topic = "cmnd/tasmota_" + name + "/POWER"
         # print(topic)
         global client
-        client.publish(topic, "OFF")
-    except Exception as ex:
-        print("ERROR Tasmota: ", ex)
+        paho.mqtt.publish.single(
+            topic=topic,
+            payload="OFF",
+            hostname="node02.myqtthub.com",
+            port=1883,
+            auth={"username": "stem_week_2023", "password": password},
+        )
 
-
-def connect(mqtt_broker, mqtt_user, mqtt_password):
-    try:
-        client_id = "botmanager-tasmota-" + socket.gethostname()
-        print(client_id)
-        # Set Connecting Client ID
-        global client
-        client = mqtt_client.Client(client_id)
-        client.username_pw_set(mqtt_user, mqtt_password)
-        client.connect(mqtt_broker, 1833)
-
+    #     client.publish(topic, "OFF")
     except Exception as ex:
         print("ERROR Tasmota: ", ex)
